@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C17C218124730330007991E3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C218024730330007991E3 /* UserData.swift */; };
+		C17C21832473DE85007991E3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C21822473DE85007991E3 /* TestView.swift */; };
+		C183F287246457340067F836 /* TransitionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F286246457340067F836 /* TransitionList.swift */; };
+		C183F2892464574C0067F836 /* TransitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F2882464574C0067F836 /* TransitionRow.swift */; };
+		C183F28B246457710067F836 /* TapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F28A246457710067F836 /* TapeView.swift */; };
 		C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C972455D3B800B2FD9E /* AppDelegate.swift */; };
 		C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C992455D3B800B2FD9E /* SceneDelegate.swift */; };
 		C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1906C9B2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld */; };
-		C1906C9F2455D3B800B2FD9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C9E2455D3B800B2FD9E /* ContentView.swift */; };
+		C1906C9F2455D3B800B2FD9E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C9E2455D3B800B2FD9E /* MainView.swift */; };
 		C1906CA12455D3B900B2FD9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1906CA02455D3B900B2FD9E /* Assets.xcassets */; };
 		C1906CA42455D3B900B2FD9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1906CA32455D3B900B2FD9E /* Preview Assets.xcassets */; };
 		C1906CA72455D3B900B2FD9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1906CA52455D3B900B2FD9E /* LaunchScreen.storyboard */; };
 		C1906CB22455D3B900B2FD9E /* TuringMachineSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906CB12455D3B900B2FD9E /* TuringMachineSimulatorTests.swift */; };
 		C1906CBD2455D3B900B2FD9E /* TuringMachineSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906CBC2455D3B900B2FD9E /* TuringMachineSimulatorUITests.swift */; };
+		C1CEFE3124609D5D006606EB /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CEFE3024609D5D006606EB /* Machine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C1906C942455D3B800B2FD9E /* TuringMachineSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringMachineSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17C218024730330007991E3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		C17C21822473DE85007991E3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		C183F286246457340067F836 /* TransitionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionList.swift; sourceTree = "<group>"; };
+		C183F2882464574C0067F836 /* TransitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionRow.swift; sourceTree = "<group>"; };
+		C183F28A246457710067F836 /* TapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapeView.swift; sourceTree = "<group>"; };
+		C1906C942455D3B800B2FD9E /* Turing Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turing Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1906C972455D3B800B2FD9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1906C992455D3B800B2FD9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C1906C9C2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TuringMachineSimulator.xcdatamodel; sourceTree = "<group>"; };
-		C1906C9E2455D3B800B2FD9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C1906C9E2455D3B800B2FD9E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C1906CA02455D3B900B2FD9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1906CA32455D3B900B2FD9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1906CA62455D3B900B2FD9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		C1906CB82455D3B900B2FD9E /* TuringMachineSimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringMachineSimulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1906CBC2455D3B900B2FD9E /* TuringMachineSimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuringMachineSimulatorUITests.swift; sourceTree = "<group>"; };
 		C1906CBE2455D3B900B2FD9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1CEFE3024609D5D006606EB /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C17C217F24719D4D007991E3 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				C183F286246457340067F836 /* TransitionList.swift */,
+				C183F2882464574C0067F836 /* TransitionRow.swift */,
+				C183F28A246457710067F836 /* TapeView.swift */,
+				C1906C9E2455D3B800B2FD9E /* MainView.swift */,
+				C17C21822473DE85007991E3 /* TestView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		C17D3725246BDAA700453B16 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C17C217F24719D4D007991E3 /* VIews */,
+				C1906CCC245ACC5700B2FD9E /* Models */,
+				C1906C972455D3B800B2FD9E /* AppDelegate.swift */,
+				C1906C992455D3B800B2FD9E /* SceneDelegate.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		C1906C8B2455D3B800B2FD9E = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +126,7 @@
 		C1906C952455D3B800B2FD9E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C1906C942455D3B800B2FD9E /* TuringMachineSimulator.app */,
+				C1906C942455D3B800B2FD9E /* Turing Machine.app */,
 				C1906CAD2455D3B900B2FD9E /* TuringMachineSimulatorTests.xctest */,
 				C1906CB82455D3B900B2FD9E /* TuringMachineSimulatorUITests.xctest */,
 			);
@@ -101,9 +136,7 @@
 		C1906C962455D3B800B2FD9E /* TuringMachineSimulator */ = {
 			isa = PBXGroup;
 			children = (
-				C1906C972455D3B800B2FD9E /* AppDelegate.swift */,
-				C1906C992455D3B800B2FD9E /* SceneDelegate.swift */,
-				C1906C9E2455D3B800B2FD9E /* ContentView.swift */,
+				C17D3725246BDAA700453B16 /* Source */,
 				C1906CA02455D3B900B2FD9E /* Assets.xcassets */,
 				C1906CA52455D3B900B2FD9E /* LaunchScreen.storyboard */,
 				C1906CA82455D3B900B2FD9E /* Info.plist */,
@@ -139,6 +172,15 @@
 			path = TuringMachineSimulatorUITests;
 			sourceTree = "<group>";
 		};
+		C1906CCC245ACC5700B2FD9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1CEFE3024609D5D006606EB /* Machine.swift */,
+				C17C218024730330007991E3 /* UserData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,7 +198,7 @@
 			);
 			name = TuringMachineSimulator;
 			productName = TuringMachineSimulator;
-			productReference = C1906C942455D3B800B2FD9E /* TuringMachineSimulator.app */;
+			productReference = C1906C942455D3B800B2FD9E /* Turing Machine.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C1906CAC2455D3B900B2FD9E /* TuringMachineSimulatorTests */ = {
@@ -270,9 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C183F2892464574C0067F836 /* TransitionRow.swift in Sources */,
 				C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */,
+				C183F287246457340067F836 /* TransitionList.swift in Sources */,
+				C17C218124730330007991E3 /* UserData.swift in Sources */,
 				C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */,
-				C1906C9F2455D3B800B2FD9E /* ContentView.swift in Sources */,
+				C1CEFE3124609D5D006606EB /* Machine.swift in Sources */,
+				C17C21832473DE85007991E3 /* TestView.swift in Sources */,
+				C1906C9F2455D3B800B2FD9E /* MainView.swift in Sources */,
+				C183F28B246457710067F836 /* TapeView.swift in Sources */,
 				C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TuringMachineSimulator/Preview Content\"";
 				DEVELOPMENT_TEAM = WBQ2L8WB2G;
@@ -448,9 +497,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.andbog.TuringMachineSimulator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Turing Machine";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -458,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TuringMachineSimulator/Preview Content\"";
 				DEVELOPMENT_TEAM = WBQ2L8WB2G;
@@ -468,9 +519,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.andbog.TuringMachineSimulator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Turing Machine";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -479,6 +531,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WBQ2L8WB2G;
 				INFOPLIST_FILE = TuringMachineSimulatorTests/Info.plist;
@@ -501,6 +554,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WBQ2L8WB2G;
 				INFOPLIST_FILE = TuringMachineSimulatorTests/Info.plist;
