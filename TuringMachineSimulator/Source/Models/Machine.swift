@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Transition: Identifiable {
+class Transition: Identifiable, ObservableObject {
     var id = UUID()
-    var currentState = ""
-    var currentSymbol = ""
-    var writeSymbol = ""
-    var nextState = ""
-    var moveTape = MoveTape.halt
+    @Published var currentState = ""
+    @Published var currentSymbol = ""
+    @Published var writeSymbol = ""
+    @Published var nextState = ""
+    @Published var moveTape = MoveTape.halt
 }
 
 enum BlankSymbol: String, CaseIterable, Identifiable {

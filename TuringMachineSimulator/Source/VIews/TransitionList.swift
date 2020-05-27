@@ -14,14 +14,18 @@ struct TransitionList: View {
     var body: some View {
         List {
             Section(header: Text("Transitions")) {
-                ForEach(userData.transitions.indices, id: \.self) { index in
-                    TransitionRow(transition:  self.$userData.transitions[index])
+                ForEach(userData.transitions) { transition in
+                    TransitionRow(transition)
                 }
-                .onDelete(perform: { self.userData.transitions.remove(atOffsets: $0)
-                })
+                .onDelete {
+                    self.userData.transitions.remove(atOffsets: $0)
+                }
+                .onMove {
+                    self.userData.transitions.move(fromOffsets: $0, toOffset: $1)
+                }
                 HStack {
                     Spacer()
-                    Button(action: addTransition) {
+                    Button(action: {self.userData.transitions.append(Transition())}) {
                         Text("Add Transition")
                     }
                     Spacer()
@@ -29,14 +33,6 @@ struct TransitionList: View {
             }
         }
         .listStyle(GroupedListStyle())
-    }
-    
-    private func addTransition() {
-        userData.transitions.append(Transition( currentState: String(userData.transitions.count)))
-    }
-    
-    private func onDelete(offsets: IndexSet) {
-        //userData.transitions.remove(atOffsets: offsets)
     }
 }
 

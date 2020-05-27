@@ -11,5 +11,5 @@ import Combine
 final class UserData: ObservableObject {
     @Published var blankSymbol = BlankSymbol.zero
     @Published var tape = ""
-    @Published var transitions = [Transition()]
+    @Published var transitions = [Transition]()
 }
