@@ -9,20 +9,24 @@
 import SwiftUI
 
 struct TestView: View {
-    @State var isModal: Bool = false
-
-    var modal: some View {
-        Text("Modal")
-    }
-
-    
     
     var body: some View {
-        Button("Modal") {
-            self.isModal = true
-        }.sheet(isPresented: $isModal, content: {
-            self.modal
-        })
+        NavigationView {
+            List {
+                NavigationLink("Go to detail", destination: Text("New Detail"))
+            }
+            .navigationBarTitle("Programms")
+                
+            Text("Placeholder for Detail")
+                .navigationBarTitle("Program")
+                .navigationBarItems(trailing:
+                    Button(action: {}, label: {
+                        Image(systemName: "play.fill")
+                    })
+                )
+            .navigationBarBackButtonHidden(true)
+        }
+        //.navigationViewStyle(DefaultNavigationViewStyle())
     }
 }
 

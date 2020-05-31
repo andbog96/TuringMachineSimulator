@@ -14,8 +14,8 @@ struct TransitionList: View {
     var body: some View {
         List {
             Section(header: Text("Transitions")) {
-                ForEach(userData.transitions) { transition in
-                    TransitionRow(transition)
+                ForEach(userData.transitions) {
+                    TransitionRow(transition: $0)
                 }
                 .onDelete {
                     self.userData.transitions.remove(atOffsets: $0)
@@ -23,6 +23,7 @@ struct TransitionList: View {
                 .onMove {
                     self.userData.transitions.move(fromOffsets: $0, toOffset: $1)
                 }
+                
                 HStack {
                     Spacer()
                     Button(action: {self.userData.transitions.append(Transition())}) {

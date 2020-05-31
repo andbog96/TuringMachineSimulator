@@ -12,32 +12,22 @@ import SwiftUI
 struct TransitionRow: View {
     @ObservedObject var transition: Transition
     
-    init(_ transition: Transition) {
-        self.transition = transition
-    }
-    
     var body: some View {
         HStack {
             TextField("State", text: self.$transition.currentState)
             TextField("Symbol", text: $transition.currentSymbol)
                 .onReceive(Just(transition.currentSymbol)) {
-                    var newValue = ""
-                    if let char = $0.last {
-                        newValue = String(char)
-                    }
-                    if self.transition.currentSymbol != newValue {
-                        self.transition.currentSymbol = newValue
+                    let lastSymbol = String($0.last)
+                    if self.transition.currentSymbol != lastSymbol {
+                        self.transition.currentSymbol = lastSymbol
                     }
             }
             Text("->")
-            TextField("Symbol", text: self.$transition.writeSymbol)
+            TextField("Symbol", text: $transition.writeSymbol)
                 .onReceive(Just(transition.writeSymbol)) {
-                    var newValue = ""
-                    if let last = $0.last {
-                        newValue = String(last)
-                    }
-                    if self.transition.writeSymbol != newValue {
-                        self.transition.writeSymbol = newValue
+                    let lastSymbol = String($0.last)
+                    if self.transition.writeSymbol != lastSymbol {
+                        self.transition.writeSymbol = lastSymbol
                     }
             }
             Picker("", selection: $transition.moveTape) {
@@ -52,10 +42,20 @@ struct TransitionRow: View {
     }
 }
 
+extension String {
+    init(character: Character?) {
+        if let character = character {
+            self.init(character)
+        } else {
+            self.init("")
+        }
+    }
+}
+
 struct TransitionRow_Previews: PreviewProvider {
     static var previews: some View {
         return Group {
-            TransitionRow(.init())
+            TransitionRow(transition: .init())
         }
     }
 }

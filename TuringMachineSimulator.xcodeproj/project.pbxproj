@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C169A99124803DCB00C61D92 /* TraceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169A99024803DCB00C61D92 /* TraceView.swift */; };
 		C17C218124730330007991E3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C218024730330007991E3 /* UserData.swift */; };
 		C17C21832473DE85007991E3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C21822473DE85007991E3 /* TestView.swift */; };
 		C183F287246457340067F836 /* TransitionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F286246457340067F836 /* TransitionList.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C169A99024803DCB00C61D92 /* TraceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceView.swift; sourceTree = "<group>"; };
 		C17C218024730330007991E3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C17C21822473DE85007991E3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C183F286246457340067F836 /* TransitionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionList.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				C183F28A246457710067F836 /* TapeView.swift */,
 				C1906C9E2455D3B800B2FD9E /* MainView.swift */,
 				C17C21822473DE85007991E3 /* TestView.swift */,
+				C169A99024803DCB00C61D92 /* TraceView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */,
 				C183F287246457340067F836 /* TransitionList.swift in Sources */,
 				C17C218124730330007991E3 /* UserData.swift in Sources */,
+				C169A99124803DCB00C61D92 /* TraceView.swift in Sources */,
 				C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */,
 				C1CEFE3124609D5D006606EB /* Machine.swift in Sources */,
 				C17C21832473DE85007991E3 /* TestView.swift in Sources */,
