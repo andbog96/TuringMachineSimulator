@@ -10,9 +10,7 @@
 		C169A99124803DCB00C61D92 /* TraceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169A99024803DCB00C61D92 /* TraceView.swift */; };
 		C17C218124730330007991E3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C218024730330007991E3 /* UserData.swift */; };
 		C17C21832473DE85007991E3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C21822473DE85007991E3 /* TestView.swift */; };
-		C183F287246457340067F836 /* TransitionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F286246457340067F836 /* TransitionList.swift */; };
 		C183F2892464574C0067F836 /* TransitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F2882464574C0067F836 /* TransitionRow.swift */; };
-		C183F28B246457710067F836 /* TapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F28A246457710067F836 /* TapeView.swift */; };
 		C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C972455D3B800B2FD9E /* AppDelegate.swift */; };
 		C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C992455D3B800B2FD9E /* SceneDelegate.swift */; };
 		C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1906C9B2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld */; };
@@ -46,9 +44,7 @@
 		C169A99024803DCB00C61D92 /* TraceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceView.swift; sourceTree = "<group>"; };
 		C17C218024730330007991E3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C17C21822473DE85007991E3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		C183F286246457340067F836 /* TransitionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionList.swift; sourceTree = "<group>"; };
 		C183F2882464574C0067F836 /* TransitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionRow.swift; sourceTree = "<group>"; };
-		C183F28A246457710067F836 /* TapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapeView.swift; sourceTree = "<group>"; };
 		C1906C942455D3B800B2FD9E /* Turing Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turing Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1906C972455D3B800B2FD9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1906C992455D3B800B2FD9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,9 +91,7 @@
 		C17C217F24719D4D007991E3 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				C183F286246457340067F836 /* TransitionList.swift */,
 				C183F2882464574C0067F836 /* TransitionRow.swift */,
-				C183F28A246457710067F836 /* TapeView.swift */,
 				C1906C9E2455D3B800B2FD9E /* MainView.swift */,
 				C17C21822473DE85007991E3 /* TestView.swift */,
 				C169A99024803DCB00C61D92 /* TraceView.swift */,
@@ -317,14 +311,12 @@
 			files = (
 				C183F2892464574C0067F836 /* TransitionRow.swift in Sources */,
 				C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */,
-				C183F287246457340067F836 /* TransitionList.swift in Sources */,
 				C17C218124730330007991E3 /* UserData.swift in Sources */,
 				C169A99124803DCB00C61D92 /* TraceView.swift in Sources */,
 				C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */,
 				C1CEFE3124609D5D006606EB /* Machine.swift in Sources */,
 				C17C21832473DE85007991E3 /* TestView.swift in Sources */,
 				C1906C9F2455D3B800B2FD9E /* MainView.swift in Sources */,
-				C183F28B246457710067F836 /* TapeView.swift in Sources */,
 				C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

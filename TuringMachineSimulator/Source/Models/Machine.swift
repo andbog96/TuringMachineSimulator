@@ -15,16 +15,26 @@ class Transition: ObservableObject, Identifiable {
     @Published var writeSymbol = ""
     @Published var nextState = ""
     @Published var moveTape = MoveTape.halt
+    
+    convenience init(currentState: String) {
+        self.init()
+        self.currentState = currentState
+    }
 }
 
-extension String {
-    init(_ character: Character?) {
-        if let character = character {
-            self.init(character)
-        } else {
-            self.init("")
-        }
-    }
+enum Speed: Int, CaseIterable, Identifiable {
+    case one = 1
+    case ten = 10
+    case fifty = 50
+    
+    var id: Self { self }
+}
+
+enum StartPosition: String, CaseIterable, Identifiable  {
+    case left = "Left"
+    case right = "Right"
+    
+    var id: Self { self }
 }
 
 enum BlankSymbol: String, CaseIterable, Identifiable {

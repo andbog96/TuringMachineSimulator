@@ -14,7 +14,8 @@ struct TransitionRow: View {
     
     var body: some View {
         HStack {
-            TextField("State", text: self.$transition.currentState)
+            TextField("State", text: $transition.currentState)
+                .textContentType(UITextContentType(rawValue: "qew"))
             TextField("Symbol", text: $transition.currentSymbol)
                 .onReceive(Just(transition.currentSymbol)) {
                     let lastSymbol = String($0.last)
@@ -39,11 +40,14 @@ struct TransitionRow: View {
         }
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .multilineTextAlignment(.center)
+        .lineLimit(1)
+        .autocapitalization(.none)
+        .disableAutocorrection(true)
     }
 }
 
 extension String {
-    init(character: Character?) {
+    init(_ character: Character?) {
         if let character = character {
             self.init(character)
         } else {
