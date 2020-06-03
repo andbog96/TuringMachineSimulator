@@ -24,9 +24,11 @@ struct MainView: View {
 struct ProgramView: View {
     @EnvironmentObject private var userData: UserData
     @State private var tabSelection = Tabs.trace
-    @State private var machineState = MachineState.stopped
+    @State var appState = AppState.stopped
     @State private var currentState = ""
     @State private var currentPosition = 0
+    
+    @State private var machine: Machine?
     
     var body: some View {
         VStack {
@@ -40,38 +42,38 @@ struct ProgramView: View {
                     .tabItem { Text("Graph") }.tag(Tabs.graph)
                 }
                 
-                FormView().navigationBarItems(trailing:
+                FormView(appState: $appState)
+                .navigationBarItems(trailing:
                     HStack {
                         Button(action: {
-                            self.machineState = .stopped
-                            
-                            
+                            self.appState = .stopped
                         }) {
                             Text("Stop")
                         }
-                        .disabled(machineState == .stopped)
-                        .opacity(machineState == .stopped ? 0 : 1)
+                        .disabled(appState == .stopped)
+                        .opacity(appState == .stopped ? 0 : 1)
+                        
                         Button(action: {
-                            if self.machineState == .runned {
-                                self.machineState = .paused
+                            switch self.appState {
+                            case .runned:
+                                self.appState = .paused
+                            case .paused:
+                                self.appState = .runned
                                 
+                                self.machine!.resume()
+                            case .stopped:
+                                self.appState = .runned
                                 
-                            } else {
-                                self.machineState = .runned
+                                self.machine = Machine(self.userData, output: self.$userData.output, appState: self.$appState)
                             }
                         }) {
-                            Text(machineState != .runned ? "Run" : "Pause")
+                            Text(appState != .runned ? "Run" : "Pause")
                         }
                     }
                 )
+                .disabled(appState != .stopped)
             }
         }
-    }
-    
-    enum MachineState {
-        case stopped
-        case runned
-        case paused
     }
     
     enum Tabs {
@@ -82,22 +84,25 @@ struct ProgramView: View {
 
 struct FormView: View {
     @EnvironmentObject private var userData: UserData
+    @Binding var appState: AppState
     
     var body: some View {
         Form {
-            Section(header: Text("EXECUTION SPEED")) {
-                HStack {
-                    Text("Operations / sec")
-                    Spacer()
-                    Picker("", selection: $userData.speed) {
-                        ForEach(Speed.allCases) {
-                            Text(String($0.rawValue))
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .fixedSize()
-                }
-            }
+//            Section(header: Text("EXECUTION SPEED")) {
+//                HStack {
+//                    Text("Operations / sec")
+//                    Spacer()
+//                    Picker("", selection: $userData.speed) {
+//                        ForEach(Speed.allCases) {
+//                            Text(String($0.rawValue))
+//                        }
+//                    }
+//                    .pickerStyle(SegmentedPickerStyle())
+//                    .fixedSize()
+//                }
+//            }
+//            .disabled(appState == .runned)
+            
             Section(header: Text("MACHINE PROPERTIES")) {
                 HStack {
                     Text("Blank Symbol")
@@ -133,13 +138,6 @@ struct FormView: View {
                     Spacer()
                     TextField(userData.blankSymbol.rawValue, text: $userData.tape)
                         .multilineTextAlignment(.trailing)
-                    //                    Button(action: {
-                    //                        self.userData.tape = ""
-                    //                    }) {
-                    //                        Image(systemName: "multiply.circle.fill")
-                    //                            .foregroundColor(.secondary)
-                    //                    }
-                    //                    .opacity(userData.tape.isEmpty ? 0 : 1)
                 }
                 HStack {
                     Text("Output")
@@ -149,6 +147,7 @@ struct FormView: View {
                         .foregroundColor(.secondary)
                 }
             }
+            .disabled(appState != .stopped)
             Section(header: Text("TRANSITIONS")) {
                 ForEach(userData.transitions) {
                     TransitionRow(transition: $0)
@@ -168,6 +167,7 @@ struct FormView: View {
                     Spacer()
                 }
             }
+            .disabled(appState != .stopped)
         }
     }
 }
@@ -175,12 +175,5 @@ struct FormView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView().environmentObject(UserData()).previewLayout(.fixed(width: 1000, height: 800))  
-    }
-}
-
-
-struct FormView_Previews: PreviewProvider {
-    static var previews: some View {
-        FormView().environmentObject(UserData()).previewLayout(.fixed(width: 1000, height: 800))
     }
 }

@@ -18,6 +18,6 @@ final class UserData: ObservableObject {
     @Published var transitions = [Transition]()
     
     init() {
-        self.transitions.append(contentsOf: [Transition(currentState: self.startState), Transition()])
+        self.transitions.append(contentsOf: [Transition(self.startState, "0", "1", .right, "q1"), Transition("q1", "0", "1", .halt, "q2")])
     }
 }
