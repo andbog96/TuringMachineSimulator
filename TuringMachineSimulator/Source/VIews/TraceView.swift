@@ -14,6 +14,14 @@ struct TraceView: View {
     }
 }
 
+struct TraceRow: View {
+    let transition: Transition
+    
+    var body: some View {
+        Text("Trace View")
+    }
+}
+
 struct TraceView_Previews: PreviewProvider {
     static var previews: some View {
         TraceView()

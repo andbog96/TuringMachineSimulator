@@ -20,6 +20,7 @@
 		C1906CA72455D3B900B2FD9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1906CA52455D3B900B2FD9E /* LaunchScreen.storyboard */; };
 		C1906CB22455D3B900B2FD9E /* TuringMachineSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906CB12455D3B900B2FD9E /* TuringMachineSimulatorTests.swift */; };
 		C1906CBD2455D3B900B2FD9E /* TuringMachineSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906CBC2455D3B900B2FD9E /* TuringMachineSimulatorUITests.swift */; };
+		C1A0AE0C2488F2DE00C898CF /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A0AE0B2488F2DE00C898CF /* ProgramView.swift */; };
 		C1CEFE3124609D5D006606EB /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CEFE3024609D5D006606EB /* Machine.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		C1906CB82455D3B900B2FD9E /* TuringMachineSimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuringMachineSimulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1906CBC2455D3B900B2FD9E /* TuringMachineSimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuringMachineSimulatorUITests.swift; sourceTree = "<group>"; };
 		C1906CBE2455D3B900B2FD9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1A0AE0B2488F2DE00C898CF /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
 		C1CEFE3024609D5D006606EB /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				C1906C9E2455D3B800B2FD9E /* MainView.swift */,
 				C17C21822473DE85007991E3 /* TestView.swift */,
 				C169A99024803DCB00C61D92 /* TraceView.swift */,
+				C1A0AE0B2488F2DE00C898CF /* ProgramView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */,
 				C1CEFE3124609D5D006606EB /* Machine.swift in Sources */,
 				C17C21832473DE85007991E3 /* TestView.swift in Sources */,
+				C1A0AE0C2488F2DE00C898CF /* ProgramView.swift in Sources */,
 				C1906C9F2455D3B800B2FD9E /* MainView.swift in Sources */,
 				C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */,
 			);

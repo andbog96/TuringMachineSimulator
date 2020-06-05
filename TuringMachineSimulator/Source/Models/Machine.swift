@@ -34,18 +34,14 @@ class Machine {
     init(_ userData: UserData, output: Binding<String>, appState: Binding<AppState>) {
         self.userData = userData
         self.output = output
+        self.output.wrappedValue = userData.tape
         self.appState = appState
         
         for t in userData.transitions {
             map[MapKey(t.currentState, t.currentSymbol)] = (t.writeSymbol, t.moveTape, t.nextState)
         }
         
-        if userData.tape.count == 0 {
-            self.tape = [userData.blankSymbol.rawValue]
-        } else {
-            self.tape = Array(userData.tape).map { String($0) }
-        }
-        
+        self.tape = Array(userData.tape).map { String($0) }
         self.state = userData.startState
         
         switch userData.startPosition {
@@ -59,10 +55,16 @@ class Machine {
     }
     
     func resume() {
+        var tapeLimitError = false
+        
         let queue = DispatchQueue.global(qos: .userInitiated)
         queue.async {
             var i = 0
             while self.appState.wrappedValue == .runned {
+                if self.userData.slowMode {
+                    Thread.sleep(forTimeInterval: 1)
+                }
+                
                 if self.position >= self.tape.count {
                     self.tape.append(contentsOf:
                         Array(repeating: self.userData.blankSymbol.rawValue,
@@ -86,7 +88,8 @@ class Machine {
                         self.position += move.intValue
                         self.state = state
                         
-                        if i % 100 == 0 {
+                        if self.userData.slowMode || i % 10000 == 0 {
+                            self.trimTape()
                             DispatchQueue.main.async {
                                 self.output.wrappedValue = String(self.tape.map { $0.first! })
                             }
@@ -98,12 +101,42 @@ class Machine {
                     }
                 }
                 
+                if self.tape.count > 100 {
+                    tapeLimitError = true
+                    DispatchQueue.main.async {
+                        self.appState.wrappedValue = .stopped
+                    }
+                }
+                
                 i += 1
             }
             
             DispatchQueue.main.async {
-                self.output.wrappedValue = String(self.tape.map { $0.first! })
+                if tapeLimitError {
+                    self.output.wrappedValue = "Tape limit exceeded."
+                } else {
+                    self.trimTape()
+                    self.output.wrappedValue = String(self.tape.map { $0.first! })
+                }
             }
+        }
+    }
+    
+    private func trimTape() {
+        let firstSymbolIndex = self.tape.firstIndex {
+            $0 != self.userData.blankSymbol.rawValue
+        }
+        if let firstSymbolIndex = firstSymbolIndex {
+            self.tape.removeSubrange(..<firstSymbolIndex)
+            self.position -= firstSymbolIndex
+        } else {
+            self.tape.removeAll(keepingCapacity: true)
+        }
+        let lastSymbolIndex = self.tape.lastIndex {
+            $0 != self.userData.blankSymbol.rawValue
+        }
+        if let lastSymbolIndex = lastSymbolIndex {
+            self.tape.removeSubrange((lastSymbolIndex + 1)...)
         }
     }
 }
@@ -132,14 +165,6 @@ enum AppState {
     case stopped
     case runned
     case paused
-}
-
-enum Speed: Int, CaseIterable, Identifiable {
-    case one = 1
-    case ten = 10
-    case fifty = 50
-    
-    var id: Self { self }
 }
 
 enum StartPosition: String, CaseIterable, Identifiable  {
