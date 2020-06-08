@@ -37,8 +37,8 @@ class Machine {
         self.output.wrappedValue = userData.tape
         self.appState = appState
         
-        for t in userData.transitions {
-            map[MapKey(t.currentState, t.currentSymbol)] = (t.writeSymbol, t.moveTape, t.nextState)
+        for t in userData.transitions where !t.isEmpty {
+                map[MapKey(t.currentState, t.currentSymbol)] = (t.writeSymbol, t.moveTape, t.nextState)
         }
         
         self.tape = Array(userData.tape).map { String($0) }
@@ -87,9 +87,9 @@ class Machine {
                         self.tape[self.position] = symbol
                         self.position += move.intValue
                         self.state = state
+                        self.trimTape()
                         
                         if self.userData.slowMode || i % 10000 == 0 {
-                            self.trimTape()
                             DispatchQueue.main.async {
                                 self.output.wrappedValue = String(self.tape.map { $0.first! })
                             }
@@ -112,11 +112,13 @@ class Machine {
             }
             
             DispatchQueue.main.async {
-                if tapeLimitError {
-                    self.output.wrappedValue = "Tape limit exceeded."
-                } else {
-                    self.trimTape()
-                    self.output.wrappedValue = String(self.tape.map { $0.first! })
+                if self.appState.wrappedValue == .stopped {
+                    if tapeLimitError {
+                        self.output.wrappedValue = "Tape limit exceeded."
+                    } else {
+                        self.trimTape()
+                        self.output.wrappedValue = String(self.tape.map { $0.first! })
+                    }
                 }
             }
         }
@@ -148,6 +150,10 @@ class Transition: ObservableObject, Identifiable {
     @Published var writeSymbol = ""
     @Published var moveTape = MoveTape.halt
     @Published var nextState = ""
+    
+    var isEmpty: Bool {
+        currentState.isEmpty || currentSymbol.isEmpty || writeSymbol.isEmpty || nextState.isEmpty
+    }
     
     convenience init(_ currentState: TMState, _ currentSymbol: TMSymbol,
                      _ writeSymbol: TMSymbol, _ moveTape: MoveTape,

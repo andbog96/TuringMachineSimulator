@@ -15,7 +15,7 @@ struct TransitionRow: View {
     var body: some View {
         HStack {
             TextField("State", text: $transition.currentState)
-                .textContentType(UITextContentType(rawValue: "qew"))
+            
             TextField("Symbol", text: $transition.currentSymbol)
                 .onReceive(Just(transition.currentSymbol)) {
                     let lastSymbol = String($0.last)
@@ -23,19 +23,23 @@ struct TransitionRow: View {
                         self.transition.currentSymbol = lastSymbol
                     }
             }
-            Text("->")
+            
+            Text("=>")
+            
             TextField("Symbol", text: $transition.writeSymbol)
-                .onReceive(Just(transition.writeSymbol)) {
+            .onReceive(Just(transition.writeSymbol)) {
                     let lastSymbol = String($0.last)
                     if self.transition.writeSymbol != lastSymbol {
                         self.transition.writeSymbol = lastSymbol
                     }
             }
+            
             Picker("", selection: $transition.moveTape) {
                 ForEach(MoveTape.allCases) {
                     Text($0.rawValue)
                 }
             }.pickerStyle(SegmentedPickerStyle()).fixedSize()
+            
             TextField("State", text: self.$transition.nextState)
         }
         .textFieldStyle(RoundedBorderTextFieldStyle())
