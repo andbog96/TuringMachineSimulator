@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TuringMachineSimulator
+//@testable import TuringMachineSimulator
 
 class TuringMachineSimulatorTests: XCTestCase {
 

@@ -19,6 +19,7 @@ struct TransitionRow: View {
             TextField("Symbol", text: $transition.currentSymbol)
                 .onReceive(Just(transition.currentSymbol)) {
                     let lastSymbol = String($0.last)
+                    // Необходимая проверка, иначе будет бесконечный цикл присвоений связанных переменных
                     if self.transition.currentSymbol != lastSymbol {
                         self.transition.currentSymbol = lastSymbol
                     }
@@ -29,6 +30,7 @@ struct TransitionRow: View {
             TextField("Symbol", text: $transition.writeSymbol)
             .onReceive(Just(transition.writeSymbol)) {
                     let lastSymbol = String($0.last)
+                    // Необходимая проверка, иначе будет бесконечный цикл присвоений связанных переменных
                     if self.transition.writeSymbol != lastSymbol {
                         self.transition.writeSymbol = lastSymbol
                     }
@@ -50,6 +52,7 @@ struct TransitionRow: View {
     }
 }
 
+// Расширение для строк, добавляющее конструктор, создающий строку из опционального символа
 extension String {
     init(_ character: Character?) {
         if let character = character {
@@ -62,8 +65,8 @@ extension String {
 
 struct TransitionRow_Previews: PreviewProvider {
     static var previews: some View {
-        return Group {
-            TransitionRow(transition: .init())
+        Group {
+            TransitionRow(transition: .init()).padding()
         }
     }
 }

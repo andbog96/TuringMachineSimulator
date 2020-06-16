@@ -11,7 +11,10 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         NavigationView {
-            Text("Разработал студент группы 6311. Богданов А.В.")
+            Text("""
+                 Turing Machine Simulator
+                 Designed by Andrey Bogdanov in 2020
+                 """)
                 .navigationBarTitle("About")
             
             ProgramView()

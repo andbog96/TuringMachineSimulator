@@ -11,43 +11,40 @@ import SwiftUI
 struct ProgramView: View {
     @EnvironmentObject private var userData: UserData
     @State var appState = AppState.stopped
-    @State private var currentState = ""
-    @State private var currentPosition = 0
-    
+
     @State private var machine: Machine?
-    
+
     var body: some View {
         VStack {
             Divider()
             FormView(appState: $appState)
             .navigationBarItems(trailing:
-                HStack {
-                    Button(action: {
-                        self.appState = .stopped
-                    }) {
-                        Text("Stop")
-                    }
-                    .disabled(appState == .stopped)
-                    .opacity(appState == .stopped ? 0 : 1)
-                    
-                    Button(action: {
-                        switch self.appState {
-                        case .runned:
-                            self.appState = .paused
-                        case .paused:
-                            self.appState = .runned
-                            
-                            self.machine!.resume()
-                        case .stopped:
-                            self.appState = .runned
-                            
-                            self.machine = Machine(self.userData, output: self.$userData.output, appState: self.$appState)
-                        }
-                    }) {
-                        Text(appState != .runned ? "Run" : "Pause")
-                    }
+            HStack {
+                Button(action: {
+                    self.appState = .stopped
+                }) {
+                    Text("Stop")
                 }
-            )
+                .disabled(appState == .stopped)
+                .opacity(appState == .stopped ? 0 : 1)
+
+                Button(action: {
+                    switch self.appState {
+                    case .runned:
+                        self.appState = .paused
+                    case .paused:
+                        self.appState = .runned
+
+                        self.machine!.resume()
+                    case .stopped:
+                        self.appState = .runned
+
+                        self.machine = Machine(self.userData, output: self.$userData.output, appState: self.$appState)
+                    }
+                }) {
+                    Text(appState != .runned ? "Run" : "Pause")
+                }
+            })
             .frame(minWidth: 491)
         }
     }
@@ -56,7 +53,7 @@ struct ProgramView: View {
 struct FormView: View {
     @EnvironmentObject private var userData: UserData
     @Binding var appState: AppState
-    
+
     var body: some View {
         Form {
             Section(header: Text("MACHINE PROPERTIES")) {
@@ -68,8 +65,8 @@ struct FormView: View {
                             Text($0.rawValue)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .fixedSize()
+                            .pickerStyle(SegmentedPickerStyle())
+                            .fixedSize()
                 }
                 HStack {
                     Text("Start Position")
@@ -79,8 +76,8 @@ struct FormView: View {
                             Text($0.rawValue)
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .fixedSize()
+                            .pickerStyle(SegmentedPickerStyle())
+                            .fixedSize()
                 }
                 HStack {
                     Text("Start State")
@@ -89,41 +86,44 @@ struct FormView: View {
                 }
             }
             .disabled(appState != .stopped)
+
             Section(header: Text("TAPE")) {
                 HStack {
                     Text("Input")
                     Spacer()
                     TextField(userData.blankSymbol.rawValue, text: $userData.tape)
-                        .multilineTextAlignment(.trailing)
+                            .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Text("Output")
                     Spacer()
                     Text(userData.output)
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(.secondary)
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(.secondary)
                 }
             }
             .disabled(appState != .stopped)
+
             Section(header: Text("SPEED"), footer: Text("Halt machine for a second before every transition.")) {
                 Toggle(isOn: $userData.slowMode) {
                     Text("Slow Mode")
                 }
             }
+ 
             Section(header: Text("TRANSITIONS")) {
                 ForEach(userData.transitions) {
                     TransitionRow(transition: $0)
                 }
-                .onDelete {
-                    self.userData.transitions.remove(atOffsets: $0)
-                }
                 .onMove {
                     self.userData.transitions.move(fromOffsets: $0, toOffset: $1)
                 }
-                
+                .onDelete {
+                    self.userData.transitions.remove(atOffsets: $0)
+                }
+
                 HStack {
                     Spacer()
-                    Button(action: {self.userData.transitions.append(Transition())}) {
+                    Button(action: { self.userData.transitions.append(Transition()) }) {
                         Text("Add Transition")
                     }
                     Spacer()

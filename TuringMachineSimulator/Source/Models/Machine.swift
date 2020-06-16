@@ -9,10 +9,11 @@
 import Foundation
 import SwiftUI
 
-typealias TMState = String
-typealias TMSymbol = String
+typealias TMState = String // Псевдоним для состояния
+typealias TMSymbol = String // Псевдоним для символа
 
 class Machine {
+    // Вспомогательный костыль, так как кортежи почему-то не могут быть Hashable
     struct MapKey: Hashable {
         var state: TMState
         var symbol: TMSymbol
@@ -21,13 +22,15 @@ class Machine {
             self.symbol = symbol
         }
     }
+    
+    // Внутренняя структура. Нужна для скорости поиска нужных переходов
     private var map = [MapKey: (TMSymbol, MoveTape, TMState)]()
     
     private var userData: UserData
     private var output: Binding<String>
     private var appState: Binding<AppState>
     
-    private var tape: [String]
+    private var tape: [TMSymbol]
     private var state: TMState
     private var position: Int
     
@@ -38,7 +41,7 @@ class Machine {
         self.appState = appState
         
         for t in userData.transitions where !t.isEmpty {
-                map[MapKey(t.currentState, t.currentSymbol)] = (t.writeSymbol, t.moveTape, t.nextState)
+            map[MapKey(t.currentState, t.currentSymbol)] = (t.writeSymbol, t.moveTape, t.nextState)
         }
         
         self.tape = Array(userData.tape).map { String($0) }
@@ -55,11 +58,11 @@ class Machine {
     }
     
     func resume() {
-        var tapeLimitError = false
+        var tapeLimitError = false // Флаг
         
         let queue = DispatchQueue.global(qos: .userInitiated)
         queue.async {
-            var i = 0
+            var i = 0 // Переменная для подсчёта выполненных переходов
             while self.appState.wrappedValue == .runned {
                 if self.userData.slowMode {
                     Thread.sleep(forTimeInterval: 1)
@@ -80,7 +83,7 @@ class Machine {
                 if let (symbol, move, state) = value {
                     if move == .halt && state == self.state
                         && symbol == self.tape[self.position] {
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.sync {
                             self.appState.wrappedValue = .stopped
                         }
                     } else {
@@ -90,20 +93,20 @@ class Machine {
                         self.trimTape()
                         
                         if self.userData.slowMode || i % 10000 == 0 {
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.sync {
                                 self.output.wrappedValue = String(self.tape.map { $0.first! })
                             }
                         }
                     }
                 } else {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.appState.wrappedValue = .stopped
                     }
                 }
                 
                 if self.tape.count > 100 {
                     tapeLimitError = true
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.appState.wrappedValue = .stopped
                     }
                 }
@@ -111,7 +114,7 @@ class Machine {
                 i += 1
             }
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 if self.appState.wrappedValue == .stopped {
                     if tapeLimitError {
                         self.output.wrappedValue = "Tape limit exceeded."
@@ -134,6 +137,7 @@ class Machine {
         } else {
             self.tape.removeAll(keepingCapacity: true)
         }
+        
         let lastSymbolIndex = self.tape.lastIndex {
             $0 != self.userData.blankSymbol.rawValue
         }
@@ -144,17 +148,19 @@ class Machine {
 }
 
 class Transition: ObservableObject, Identifiable {
-    let id = UUID()
+    let id = UUID() // Генерирует уникальный идентификатор
     @Published var currentState = ""
     @Published var currentSymbol = ""
     @Published var writeSymbol = ""
     @Published var moveTape = MoveTape.halt
     @Published var nextState = ""
     
+    // Вычисляемое свойство, показывающее что хотя бы одно из полей не заполнено
     var isEmpty: Bool {
         currentState.isEmpty || currentSymbol.isEmpty || writeSymbol.isEmpty || nextState.isEmpty
     }
     
+    // Вспомогательный конструктор (дефолтный пустой, так как всем полям присвоены значения по умолчанию
     convenience init(_ currentState: TMState, _ currentSymbol: TMSymbol,
                      _ writeSymbol: TMSymbol, _ moveTape: MoveTape,
                      _ nextState: TMState) {
@@ -167,6 +173,7 @@ class Transition: ObservableObject, Identifiable {
     }
 }
 
+// Состояние эмулятора
 enum AppState {
     case stopped
     case runned
@@ -176,14 +183,14 @@ enum AppState {
 enum StartPosition: String, CaseIterable, Identifiable  {
     case left = "Left"
     case right = "Right"
-    
+    //Вычисляемая переменная необходима для соответствия протоколу Identifiable
     var id: Self { self }
 }
 
 enum BlankSymbol: String, CaseIterable, Identifiable {
     case zero = "0"
     case underscore = "_"
-    
+    //Вычисляемая переменная необходима для соответствия протоколу Identifiable
     var id: Self { self }
 }
 
@@ -192,6 +199,7 @@ enum MoveTape: String, CaseIterable, Identifiable {
     case halt = "H"
     case right = "R"
     
+    //Вычисляемое значение, позволяющее проще передвигать управляющее устройство
     var intValue: Int {
         switch self {
         case .left:
@@ -202,6 +210,6 @@ enum MoveTape: String, CaseIterable, Identifiable {
             return 1
         }
     }
-    
+    //Вычисляемая переменная необходима для соответствия протоколу Identifiable
     var id: Self { self }
 }
