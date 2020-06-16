@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="36aaa63f-1320-4349-984c-4000fe3d2ab0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/TuringMachineSimulator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/andbog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TuringMachineSimulator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/xcode.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TuringMachineSimulator.xcodeproj/xcuserdata/andbog.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuringMachineSimulator/Source/Models/Machine.swift" beforeDir="false" afterPath="$PROJECT_DIR$/TuringMachineSimulator/Source/Models/Machine.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuringMachineSimulator/Source/Models/UserData.swift" beforeDir="false" afterPath="$PROJECT_DIR$/TuringMachineSimulator/Source/Models/UserData.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuringMachineSimulator/Source/VIews/MainView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/TuringMachineSimulator/Source/VIews/MainView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuringMachineSimulator/Source/VIews/ProgramView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/TuringMachineSimulator/Source/VIews/ProgramView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuringMachineSimulator/Source/VIews/TransitionRow.swift" beforeDir="false" afterPath="$PROJECT_DIR$/TuringMachineSimulator/Source/VIews/TransitionRow.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuringMachineSimulatorTests/TuringMachineSimulatorTests.swift" beforeDir="false" afterPath="$PROJECT_DIR$/TuringMachineSimulatorTests/TuringMachineSimulatorTests.swift" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_1BDC758C-0E7C-42EA-97AF-2A5CB1B32EF8" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bJuETNjtDOgb2UEBjIK3230N4j" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36aaa63f-1320-4349-984c-4000fe3d2ab0" name="Default Changelist" comment="" />
+      <created>1588362406069</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588362406069</updated>
+      <workItem from="1588362410959" duration="93000" />
+      <workItem from="1588362520259" duration="1634000" />
+      <workItem from="1592040417054" duration="2514000" />
+      <workItem from="1592043730040" duration="716000" />
+      <workItem from="1592148060278" duration="444000" />
+      <workItem from="1592226225977" duration="234000" />
+      <workItem from="1592244009023" duration="4600000" />
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="386" y="262" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1592042086514">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="386" y="262" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.800@0.0.1280.800" timestamp="1592042086514" />
+    <state width="1280" height="219" key="GridCell.Tab.0.bottom" timestamp="1592337563565">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1280" height="219" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1592337563565" />
+    <state width="1280" height="219" key="GridCell.Tab.0.center" timestamp="1592337563564">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1280" height="219" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1592337563564" />
+    <state width="1280" height="219" key="GridCell.Tab.0.left" timestamp="1592337563563">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1280" height="219" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1592337563563" />
+    <state width="1280" height="219" key="GridCell.Tab.0.right" timestamp="1592337563564">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1280" height="219" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1592337563564" />
+    <state x="138" y="30" key="SettingsEditor" timestamp="1592043836732">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="138" y="30" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1592043836732" />
+    <state x="370" y="150" width="540" height="524" key="StructurePopup" timestamp="1592328081723">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="370" y="150" width="540" height="524" key="StructurePopup/0.0.1280.800@0.0.1280.800" timestamp="1592328081723" />
+    <state x="382" y="251" key="cloudConfig.PluginsDialog" timestamp="1592043594931">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="382" y="251" key="cloudConfig.PluginsDialog/0.0.1280.800@0.0.1280.800" timestamp="1592043594931" />
+    <state x="521" y="251" key="cloudConfig.SelfSettingsDialog" timestamp="1592043566832">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="521" y="251" key="cloudConfig.SelfSettingsDialog/0.0.1280.800@0.0.1280.800" timestamp="1592043566832" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1592333765767">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1280.800@0.0.1280.800" timestamp="1592333765767" />
+  </component>
+</project>
