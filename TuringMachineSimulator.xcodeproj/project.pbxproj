@@ -90,7 +90,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C17C217F24719D4D007991E3 /* VIews */ = {
+		C17C217F24719D4D007991E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C183F2882464574C0067F836 /* TransitionRow.swift */,
@@ -99,13 +99,13 @@
 				C169A99024803DCB00C61D92 /* TraceView.swift */,
 				C1A0AE0B2488F2DE00C898CF /* ProgramView.swift */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C17D3725246BDAA700453B16 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C17C217F24719D4D007991E3 /* VIews */,
+				C17C217F24719D4D007991E3 /* Views */,
 				C1906CCC245ACC5700B2FD9E /* Models */,
 				C1906C972455D3B800B2FD9E /* AppDelegate.swift */,
 				C1906C992455D3B800B2FD9E /* SceneDelegate.swift */,
