@@ -105,10 +105,6 @@
 		C17D3725246BDAA700453B16 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C17C217F24719D4D007991E3 /* Views */,
-				C1906CCC245ACC5700B2FD9E /* Models */,
-				C1906C972455D3B800B2FD9E /* AppDelegate.swift */,
-				C1906C992455D3B800B2FD9E /* SceneDelegate.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -136,6 +132,10 @@
 		C1906C962455D3B800B2FD9E /* TuringMachineSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				C1906C972455D3B800B2FD9E /* AppDelegate.swift */,
+				C1906C992455D3B800B2FD9E /* SceneDelegate.swift */,
+				C1906CCC245ACC5700B2FD9E /* Models */,
+				C17C217F24719D4D007991E3 /* Views */,
 				C17D3725246BDAA700453B16 /* Source */,
 				C1906CA02455D3B900B2FD9E /* Assets.xcassets */,
 				C1906CA52455D3B900B2FD9E /* LaunchScreen.storyboard */,
