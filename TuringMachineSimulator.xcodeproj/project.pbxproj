@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C169A99124803DCB00C61D92 /* TraceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169A99024803DCB00C61D92 /* TraceView.swift */; };
 		C17C218124730330007991E3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C218024730330007991E3 /* UserData.swift */; };
-		C17C21832473DE85007991E3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C21822473DE85007991E3 /* TestView.swift */; };
 		C183F2892464574C0067F836 /* TransitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183F2882464574C0067F836 /* TransitionRow.swift */; };
+		C187BF4E249992B50099F8E5 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C187BF4D249992B50099F8E5 /* FormView.swift */; };
 		C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C972455D3B800B2FD9E /* AppDelegate.swift */; };
 		C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1906C992455D3B800B2FD9E /* SceneDelegate.swift */; };
 		C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1906C9B2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld */; };
@@ -44,8 +44,8 @@
 /* Begin PBXFileReference section */
 		C169A99024803DCB00C61D92 /* TraceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceView.swift; sourceTree = "<group>"; };
 		C17C218024730330007991E3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		C17C21822473DE85007991E3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C183F2882464574C0067F836 /* TransitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionRow.swift; sourceTree = "<group>"; };
+		C187BF4D249992B50099F8E5 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		C1906C942455D3B800B2FD9E /* Turing Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Turing Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1906C972455D3B800B2FD9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1906C992455D3B800B2FD9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,9 +95,9 @@
 			children = (
 				C183F2882464574C0067F836 /* TransitionRow.swift */,
 				C1906C9E2455D3B800B2FD9E /* MainView.swift */,
-				C17C21822473DE85007991E3 /* TestView.swift */,
 				C169A99024803DCB00C61D92 /* TraceView.swift */,
 				C1A0AE0B2488F2DE00C898CF /* ProgramView.swift */,
+				C187BF4D249992B50099F8E5 /* FormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,11 +306,11 @@
 			files = (
 				C183F2892464574C0067F836 /* TransitionRow.swift in Sources */,
 				C1906C982455D3B800B2FD9E /* AppDelegate.swift in Sources */,
+				C187BF4E249992B50099F8E5 /* FormView.swift in Sources */,
 				C17C218124730330007991E3 /* UserData.swift in Sources */,
 				C169A99124803DCB00C61D92 /* TraceView.swift in Sources */,
 				C1906C9D2455D3B800B2FD9E /* TuringMachineSimulator.xcdatamodeld in Sources */,
 				C1CEFE3124609D5D006606EB /* Machine.swift in Sources */,
-				C17C21832473DE85007991E3 /* TestView.swift in Sources */,
 				C1A0AE0C2488F2DE00C898CF /* ProgramView.swift in Sources */,
 				C1906C9F2455D3B800B2FD9E /* MainView.swift in Sources */,
 				C1906C9A2455D3B800B2FD9E /* SceneDelegate.swift in Sources */,
