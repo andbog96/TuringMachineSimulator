@@ -30,19 +30,19 @@ struct ProgramView: View {
 
                 Button(action: {
                     switch self.appState {
-                    case .runned:
+                    case .run:
                         self.appState = .paused
                     case .paused:
-                        self.appState = .runned
+                        self.appState = .run
 
                         self.machine!.resume()
                     case .stopped:
-                        self.appState = .runned
+                        self.appState = .run
 
                         self.machine = Machine(self.userData, output: self.$userData.output, appState: self.$appState)
                     }
                 }) {
-                    Text(appState != .runned ? "Run" : "Pause")
+                    Text(appState != .run ? "Run" : "Pause")
                 }
             })
             .frame(minWidth: 491)

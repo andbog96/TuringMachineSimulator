@@ -63,7 +63,7 @@ class Machine {
         let queue = DispatchQueue.global(qos: .userInitiated)
         queue.async {
             var i = 0 // Переменная для подсчёта выполненных переходов
-            while self.appState.wrappedValue == .runned {
+            while self.appState.wrappedValue == .run {
                 if self.userData.slowMode {
                     Thread.sleep(forTimeInterval: 1)
                 }
@@ -83,7 +83,7 @@ class Machine {
                 if let (symbol, move, state) = value {
                     if move == .halt && state == self.state
                         && symbol == self.tape[self.position] {
-                        DispatchQueue.main.sync {
+                        DispatchQueue.main.async {
                             self.appState.wrappedValue = .stopped
                         }
                     } else {
@@ -93,20 +93,20 @@ class Machine {
                         self.trimTape()
                         
                         if self.userData.slowMode || i % 10000 == 0 {
-                            DispatchQueue.main.sync {
+                            DispatchQueue.main.async {
                                 self.output.wrappedValue = String(self.tape.map { $0.first! })
                             }
                         }
                     }
                 } else {
-                    DispatchQueue.main.sync {
+                    DispatchQueue.main.async {
                         self.appState.wrappedValue = .stopped
                     }
                 }
                 
                 if self.tape.count > 100 {
                     tapeLimitError = true
-                    DispatchQueue.main.sync {
+                    DispatchQueue.main.async {
                         self.appState.wrappedValue = .stopped
                     }
                 }
@@ -114,7 +114,7 @@ class Machine {
                 i += 1
             }
             
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 if self.appState.wrappedValue == .stopped {
                     if tapeLimitError {
                         self.output.wrappedValue = "Tape limit exceeded."
@@ -176,7 +176,7 @@ class Transition: ObservableObject, Identifiable {
 // Состояние эмулятора
 enum AppState {
     case stopped
-    case runned
+    case run
     case paused
 }
 

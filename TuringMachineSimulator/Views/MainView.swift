@@ -13,7 +13,8 @@ struct MainView: View {
         NavigationView {
             Text("""
                  Turing Machine Simulator
-                 Designed by Andrey Bogdanov in 2020
+                 Developed by Andrey Bogdanov in 2020
+                 https://github.com/andbog96/TuringMachineSimulator
                  """)
                 .navigationBarTitle("About")
             
